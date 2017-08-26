@@ -1,0 +1,45 @@
+<div class="app flex-row align-items-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12"> 
+                <div class="card-group mb-0">
+                    <div class="row" style="background: white">                    
+                        <div class="card-block">
+                            <h3>Menu</h3>
+                            <!--<form #enquiryForm="ngForm" method="post" name="enquiryForm">-->                         
+                            <div class="input-group mb-1">
+                               <!--<p-menu [model]="items" ></p-menu>  
+                                                    -->                            
+                            <p-dataList [value]="items">
+                                <ng-template let-obj pTemplate="item">
+                                    <a (click)="handlePackage(obj)">{{obj.label}}</a>
+                                </ng-template>
+                            </p-dataList>
+                            <!--</form>-->                            
+                        </div>
+                    </div>
+                    <div class="row" style="background:#20a8d8">
+                        <div class="card-block text-center">
+                            <div class="col-md-12">
+                                <p-dataGrid [value]="subitems">
+                                    <ng-template let-obj pTemplate="item">
+                                        <div class="ui-g-12 ui-md-3">
+                                           <img src="assets/img/{{obj.package_option_image}}" width="60">
+                                          <a (click)="showitems(obj)"> <span>{{obj.package_option_name}}</span></a>
+                                        </div>
+                                    </ng-template>
+                                </p-dataGrid>
+                                <hr/>
+                            </div>
+                            <div class="col-md-12">
+                                <h2>Sit back and Relax!</h2>
+                                <p>We will walk you through the various options and you can pick your favorites to get a custom proposal made just for you.</p>
+                                <button type="button" class="btn btn-primary active mt-1">Begin!</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
