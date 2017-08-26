@@ -1,0 +1,61 @@
+// Here you can add other styles
+.btn-sml {
+    height: 35px;
+    font-size: 12px;
+    margin-top: 5px;
+    border-radius: 5px;
+    padding-top: 10px !important;
+}
+
+.social-box-company {
+    min-height: 120px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #cfd8dc;
+}
+
+.social-box-company i {
+    display: block;
+    margin: -1px -1px 0;
+    font-size: 15px;
+    line-height: 50px;
+    background: #cfd8dc;
+}
+
+.social-box-company.facebook i {
+    color: #fff;
+    background: #3b5998;
+}
+
+.social-box-company ul {
+    padding: 10px 0;
+    list-style: none;
+}
+
+.social-box-company ul li:first-child {
+    border-right: 1px solid #cfd8dc;
+}
+
+.social-box-company ul li {
+    display: block;
+    float: left;
+    width: 50%;
+}
+
+.social-box-company ul li strong {
+    display: block;
+    font-size: 20px;
+}
+
+.m-t {
+    margin-top:10px;
+}
+
+.m-b {
+    margin-bottom: 10px;
+}
+
+.b-b {
+    border-bottom: 1px solid #ccc;
+}

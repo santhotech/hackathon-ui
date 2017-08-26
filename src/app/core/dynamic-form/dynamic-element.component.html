@@ -1,0 +1,32 @@
+<div [formGroup]="form" class="form-group row" >
+    <label [attr.for]="formelement.field_column_name" class="col-md-2 col-form-label"><span *ngIf="formelement.field_type!='checkbox'">{{formelement.field_name}}</span></label>
+    <div class="col-md-6" [ngSwitch]="formelement.field_type">
+        <!-- Textbox -->
+        <input *ngSwitchCase="'textbox'" [formControlName]="formelement.field_column_name" [id]="formelement.field_column_name" type="text" class="form-control" />
+        <!-- dropdown -->
+        <select [id]="formelement.field_column_name" *ngSwitchCase="'dropdown'" [formControlName]="formelement.field_column_name" class="form-control">
+            <option *ngFor="let opt of formelement.field_options" [value]="opt">{{opt}}</option>
+        </select>
+        <!-- Checkbox -->
+        <div class="form-check" *ngSwitchCase="'checkbox'">
+        <label class="form-check-label">
+            <input class="form-check-input"   [id]="formelement.field_column_name" type="checkbox" [formControlName]="formelement.field_column_name">
+             {{formelement.field_name}}
+        </label>
+        </div>
+        <!-- Radio buttons -->
+        <div *ngSwitchCase="'radio'">
+        <div class="form-check" *ngFor="let opt of formelement.field_options">
+        <label class="form-check-label">
+            <input class="form-check-input" type="radio" [formControlName]="formelement.field_column_name" [value]="opt">
+            {{opt}}
+        </label>
+        </div>
+        </div>
+        <div class="errorMessage" *ngIf="!isValid">{{formelement.field_name}} is required</div>
+    </div>
+    
+    <div class="col-md-4">
+         
+    </div>
+</div>
