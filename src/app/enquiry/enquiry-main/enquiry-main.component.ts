@@ -1,9 +1,11 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit,Input } from '@angular/core';
 import { Router } from '@angular/router';
 import {MenuModule,MenuItem} from 'primeng/primeng';
 import {DataGridModule} from 'primeng/primeng';
 import {PackageOption} from '../../models/package_option';
 import {OptionPrimary} from '../../models/option_primary';
+import {EnquiryGroup} from '../../models/enquiry_group';
+
 import {PickListModule} from 'primeng/primeng';
 
 
@@ -21,6 +23,19 @@ import {PickListModule} from 'primeng/primeng';
   `]
 })
 export class EnquiryMainComponent {
+
+//  @Input()
+//  enquiryGroup: EnquiryGroup;
+ 
+ private _enqGroup: EnquiryGroup;
+ packageOptions: PackageOption[];
+ primaryOptions: OptionPrimary[];
+ @Input()
+  set enquiryGroup(enquiryGroup: EnquiryGroup) {
+    console.log('got name: ', enquiryGroup);
+    this._enqGroup = enquiryGroup;
+
+  }
  items: any[];
  subitems:PackageOption[];
  selectedObj:any={};
@@ -34,152 +49,20 @@ constructor( private router: Router) { }
   errors: any;
   showError: boolean = false;
 
-
+selectedPackageOption: string;
+selectedPackageGroup: String;
 handlePackage(obj) {
-    this.subitems = obj.subitems;
-    this.selectedObj =null;    
+    this.selectedPackageGroup = obj.group_package_name;
+    this.packageOptions = obj.groupPackageOptions;
 }
 
 showitems(obj){
-    this.selectedObj = obj;  
-    this.selectedItems=[]; 
-    if(this.selectedObj.selection_allowed==1){
-        this.showRadio = true;
-    }else{
-        this.showRadio = false;
-    }
+    this.selectedPackageOption = obj.package_option_name;
+   this.primaryOptions = obj.optionPrimaries;
 }
 
-limitCheckbox(){    
-    this.cnt++;   
-   if(this.cnt > this.selectedObj.selection_allowed){
-        this.disabled= true;               
-    }else{
-        this.disabled = false;
-       
-    }
-
-
-}
 
 ngOnInit(){    
-    this.selectedObj = null;
-    // this.items = [
-    //             {label:'Call Open bar',
-    //             subitems: [{
-    //                 id: 1,
-    //                 package_option_name : 'White Wine',
-    //                 package_option_image: 'white_wine.png',
-    //                 selection_allowed:1,
-                   
-    //                 inner_items:[
-    //                     {   
-    //                         id:1,
-    //                         option_primary_name:'Banfi San'
-    //                     },
-    //                      {  
-    //                         id:2,
-    //                         option_primary_name:'Angelo Pinot'
-    //                     },
-    //                      {
-    //                         id:3,
-    //                         option_primary_name:'Grigio'
-    //                     },
-    //                      {
-    //                         id:4,
-    //                         option_primary_name:'Federalist Chardonnay'
-    //                     },
-    //                     ] 
-
-    //             },
-    //             {   
-    //                 id:2,
-    //                 package_option_name : 'Red Wine',
-    //                 package_option_image: 'red_wine.png',
-    //                 selection_allowed:1,
-    //                 inner_items:[]
-    //             },
-    //             {
-    //                  id:3,
-    //                 package_option_name : 'Standard Beers',
-    //                 package_option_image: 'white_wine.png',
-    //                 selection_allowed:2,
-    //                 inner_items:[
-    //                     {
-    //                         id:1,
-    //                         option_primary_name:'Bud Light'
-    //                      },
-    //                      {
-    //                         id:2,
-    //                         option_primary_name:'Budweiser'
-    //                      },
-    //                      {
-    //                         id:3,
-    //                         option_primary_name:'Yeungling'
-    //                      },
-    //                      {
-    //                         id:4,
-    //                         option_primary_name:'Corona'
-    //                      },
-    //                 ]
-    //             },
-    //              {
-    //                 id:4,
-    //                 package_option_name : 'Liquor',
-    //                 package_option_image: 'red_wine.png',
-    //                 selection_allowed:2,
-    //                 inner_items:[]
-    //             }
-    //             ]},
-    //             {label:'Premium Open bar',
-    //             subitems: [{
-    //                 id: 2,
-    //                 package_option_name : 'White Wine',
-    //                 package_option_image: '',  
-    //                 inner_items:[]                  
-    //             },
-    //             {
-    //                 package_option_name : 'Red Wine',
-    //                 package_option_image: '',
-    //                 inner_items:[]
-    //             },
-    //             {
-    //                 package_option_name : 'Standard Beers',
-    //                 package_option_image: '',
-    //                 inner_items:[]
-    //             },
-    //              {
-    //                 package_option_name : 'Liquor',
-    //                 package_option_image: '',
-    //                 inner_items:[]
-    //             }
-    //             ]},
-
-    //             {label:'Top Shelf Open bar',
-    //             subitems:[{
-    //                 id: 3,
-    //                 package_option_name : 'White Wine',
-    //                 package_option_image: '',  
-    //                 inner_items:[]                  
-    //             },
-    //             {
-    //                 package_option_name : 'Red Wine',
-    //                 package_option_image: '',
-    //                 inner_items:[]
-    //             },
-    //             {
-    //                 package_option_name : 'Standard Beers',
-    //                 package_option_image: '',
-    //                 inner_items:[]
-    //             },
-    //              {
-    //                 package_option_name : 'Liquor',
-    //                 package_option_image: '',
-    //                 inner_items:[]
-    //             }]}
-
-    //         ]  
-          
       
 }
 
