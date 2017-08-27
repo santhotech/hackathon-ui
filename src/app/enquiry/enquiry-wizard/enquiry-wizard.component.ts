@@ -29,8 +29,7 @@ constructor( private router: Router,private http: Http,private enquiryService : 
   
 listEnquiryGroup(){
   this.enquiryService.listEnquiryGroup().subscribe(data=>{
-     this.items = data;
-     console.log(this.items);
+     this.items = data;     
   })
 }
 
