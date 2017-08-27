@@ -24,17 +24,33 @@
                                 <p-dataGrid [value]="subitems">
                                     <ng-template let-obj pTemplate="item">
                                         <div class="ui-g-12 ui-md-3">
-                                           <img src="assets/img/{{obj.package_option_image}}" width="60">
-                                          <a (click)="showitems(obj)"> <span>{{obj.package_option_name}}</span></a>
+                                           <img src="assets/img/{{obj.package_option_image}}" width="80">
+                                            <a (click)="showitems(obj)">
+                                                 <span>{{obj.package_option_name}}</span>
+                                            </a>
                                         </div>
                                     </ng-template>
                                 </p-dataGrid>
                                 <hr/>
                             </div>
-                            <div class="col-md-12">
-                                <h2>Sit back and Relax!</h2>
-                                <p>We will walk you through the various options and you can pick your favorites to get a custom proposal made just for you.</p>
-                                <button type="button" class="btn btn-primary active mt-1">Begin!</button>
+                            <div class="col-md-12">  
+                                <div *ngIf="showRadio && selectedObj">          
+                                    <div *ngFor ="let item of selectedObj.inner_items;let i =index">
+                                            <input type="radio" class="radio radio-danger" name="inner_item"  value="{{item.id}}">{{item.option_primary_name}}
+                                            
+                                    </div>
+                                </div>
+                                <div *ngIf="!showRadio && selectedObj">                                       
+                                    <p-pickList [source]="selectedObj.inner_items" [target]="selectedItems" sourceHeader="Available" targetHeader="Selected" [responsive]="true" filterBy="option_primary_name" 
+                                            dragdrop="true" showSourceControls="disabled" (click)="limitCheckbox()" filterBy="option_primary_name" sourceFilterPlaceholder="Search by Name" targetFilterPlaceholder="Search by Name" [sourceStyle]="{'height':'300px'}" [targetStyle]="{'height':'300px'}">
+                                        <ng-template let-obj pTemplate="item">
+                                            <div class="ui-helper-clearfix">
+                                                <img src="assets/img/{{obj.option_primary_image}}" style="display:inline-block;margin:2px 0 2px 2px" width="48">
+                                                <div style="font-size:14px;float:right;margin:15px 5px 0 0">{{obj.option_primary_name}}</div>
+                                            </div>
+                                        </ng-template>
+                                    </p-pickList>  
+                                </div>
                             </div>
                         </div>
                     </div>
