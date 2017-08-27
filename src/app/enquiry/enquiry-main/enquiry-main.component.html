@@ -61,9 +61,8 @@
                                             <div class="grid-cell">
                                             <a class="grid-selector">
                                             <p-panel [header]="obj.option_primary_name" [style]="{'text-align':'center'}">
-                                            
                                             <img style="max-width:80px;max-height:80px" src="{{obj.option_primary_image}}"><br />
-                                            <input type="checkbox" value="" />{{obj.cost | currency:'USD':true}}
+                                            <input type="checkbox" value="" (change)="addItem($event,obj)" />{{obj.cost | currency:'USD':true}}
                                             </p-panel>
                                             </a>
                                             </div>

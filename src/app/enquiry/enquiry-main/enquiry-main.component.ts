@@ -5,12 +5,13 @@ import {DataGridModule} from 'primeng/primeng';
 import {PackageOption} from '../../models/package_option';
 import {OptionPrimary} from '../../models/option_primary';
 import {EnquiryGroup} from '../../models/enquiry_group';
-
+import {Guest} from '../../models/guest';
 import {PickListModule} from 'primeng/primeng';
-
+import {EnquiryService} from '../enquiry.service';
 
 @Component({
   templateUrl: 'enquiry-main.component.html',  
+  providers: [EnquiryService],
   selector: "enquiry-main",
   styles: [`
     .app { 
@@ -44,7 +45,9 @@ export class EnquiryMainComponent {
  cnt:number=0;
  disabled:boolean=false;
  selectedItems:OptionPrimary[];
-constructor( private router: Router) { }
+ guestObj:Guest;
+
+constructor( private router: Router,private enquiryService : EnquiryService) { }
   user: any = {};
   errors: any;
   showError: boolean = false;
@@ -61,9 +64,31 @@ showitems(obj){
    this.primaryOptions = obj.optionPrimaries;
 }
 
+sendGuestData(){
+    let guestObj:any ={};
+    guestObj.guest_first_name = Math.random().toString(36).slice(2);
+    guestObj.guest_last_name = Math.random().toString(36).slice(2);
+  this.enquiryService.sendGuestdata(guestObj).subscribe(data=>{
+      this.guestObj = data;
+      
+  })
+}
+
+addItem(event,obj){   
+    if(event.target.checked==true){
+        let itemObj:any ={};
+         itemObj.guest=this.guestObj.id;
+        itemObj.primary_option= obj.id;
+        this.enquiryService.addItems(itemObj).subscribe(data=>{
+       console.log(data);
+    });
+    }
+   
+    
+}
 
 ngOnInit(){    
-      
+      this.sendGuestData();
 }
 
 }
