@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { User } from '../models/user';
+ import { User } from '../models/user';
 
 import { AuthService } from '../auth/auth.service';
 
@@ -10,8 +10,8 @@ import { AuthService } from '../auth/auth.service';
   templateUrl: './full-layout.component.html'
 })
 export class FullLayoutComponent implements OnInit {
-  currentUser: User;
-  constructor(private authService: AuthService, private router: Router) { }
+ currentUser: User;
+  constructor( private authService: AuthService,private router: Router) { }
 
   public toggled(open:boolean):void {
   }
@@ -26,7 +26,7 @@ export class FullLayoutComponent implements OnInit {
   }
 
   logout() {
-    this.authService.logout();
+    //this.authService.logout();
     this.router.navigate(['/auth/login']);
   }
 
@@ -36,6 +36,6 @@ export class FullLayoutComponent implements OnInit {
       if(user) {
         this.currentUser = user;
       }
-    })
+   })
   }
 }

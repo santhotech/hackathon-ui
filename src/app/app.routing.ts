@@ -35,7 +35,7 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: './auth/auth.module#AuthModule',
+       loadChildren: './auth/auth.module#AuthModule',
       }
     ]
   },

@@ -28,9 +28,9 @@
                 <a class="dropdown-item" (click)="logout()"><i class="fa fa-lock"></i> Logout</a>
             </div>
         </li>
-        <!--<li class="nav-item hidden-md-down">
+        <li class="nav-item hidden-md-down">
             <a class="nav-link navbar-toggler aside-menu-toggler" href="#">&#9776;</a>
-        </li>-->
+        </li>
     </ul>
 
 </header>
@@ -54,9 +54,9 @@
                 <li class="nav-item">
                     <a class="nav-link" routerLinkActive="active" [routerLink]="['/expense/manage-expense']"><i class="icon-calculator"></i> Manage Expenses</a>
                 </li>
-                <!--<li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link" routerLinkActive="active" [routerLink]="['/reports/manage-reports']"><i class="icon-pie-chart"></i> Manage Reports</a>
-                </li>-->
+                </li>
                 <li class="divider"></li>
                 <li class="nav-title">
                     Administration
@@ -83,7 +83,7 @@
                     <a class="nav-link" routerLinkActive="active" [routerLink]="['/admin/manage-expense-form']"><i class="icon-pie-chart"></i> Manage Expense Form</a>
                 </li>
 
-                <!--<li class="nav-item nav-dropdown">
+                <li class="nav-item nav-dropdown">
                     <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-star"></i> Expense Form Builder</a>
                     <ul class="nav-dropdown-items">
                         <li class="nav-item">
@@ -99,20 +99,20 @@
                             <a class="nav-link" routerLinkActive="active" [routerLink]="['/pages/500']"><i class="icon-star"></i> Error 500</a>
                         </li>
                     </ul>
-                </li>-->
+                </li>
 
             </ul>
         </nav>
     </div>
 
     <!-- Main content -->
-    <main class="main">
+    <!--<main class="main">-->
 
         <!-- Breadcrumb -->
-        <ol class="breadcrumb">
+       <ol class="breadcrumb">
             <breadcrumbs></breadcrumbs>
 
-            <!-- Breadcrumb Menu-->
+           Breadcrumb Menu-->
             <li class="breadcrumb-menu hidden-md-down">
                 <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
                     
@@ -129,9 +129,9 @@
             <router-outlet></router-outlet>
         </div>
         <!-- /.conainer-fluid -->
-    </main>
+    <!--</main>-->
 
-    <!--<aside class="aside-menu">
+    <aside class="aside-menu">
         <tabset>
             <tab>
                 <template tabHeading><i class="icon-list"></i>
@@ -413,9 +413,9 @@
                 </div>
             </tab>
         </tabset>
-    </aside>-->
+    </aside>
 </div>
-<user-notification></user-notification>
+<!--<user-notification></user-notification>-->
 <footer class="app-footer">
     <a href="http://expens.in" target="_blank">Expensin</a> &copy; 2017 Expensin.
     <span class="float-right">All Rights Reserved</span>
