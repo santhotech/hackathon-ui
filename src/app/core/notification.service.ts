@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Http, Response } from "@angular/http";
 import { Observable } from "rxjs/Observable";
-import { User } from "../models/user";
+//import { User } from "../models/user";
 import { ResponseError } from "../models/response-error";
 import { environment } from "../../environments/environment";
 import { Subject, BehaviorSubject } from 'rxjs/Rx';

@@ -32,7 +32,7 @@ import { SimpleLayoutComponent } from './layouts/simple-layout.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     CoreModule.forRoot(),
-    AuthJwtModule,
+   AuthJwtModule,
     NgbModule.forRoot(),
     //DropdownModule.forRoot(),
     TabsModule.forRoot(),

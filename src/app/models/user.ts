@@ -1,4 +1,3 @@
-import { UserProfile } from './user-profile';
 export class User {
     first_name: string;
     last_name: string;
@@ -9,5 +8,5 @@ export class User {
     is_superuser: boolean;
     is_active: boolean;
     date_joined: Date;
-    userProfile: UserProfile;
+ //   userProfile: UserProfile;
 }
