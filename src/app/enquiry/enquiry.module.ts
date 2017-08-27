@@ -7,7 +7,7 @@ import {DataGridModule} from 'primeng/primeng';
 import {DataListModule} from 'primeng/primeng';
 import {RadioButtonModule} from 'primeng/primeng';
 import {PickListModule} from 'primeng/primeng';
-
+import {PanelModule} from 'primeng/primeng';
 
 import { EnquiryWizardComponent } from './enquiry-wizard/enquiry-wizard.component';
 import { EnquiryMainComponent } from './enquiry-main/enquiry-main.component';
@@ -20,7 +20,8 @@ import { EnquiryRoutingModule } from './enquiry-routing.module';
   MenuModule,
   DataGridModule,
   DataListModule,
-  PickListModule
+  PickListModule,
+  PanelModule
  ],
   declarations: [
     EnquiryWizardComponent,

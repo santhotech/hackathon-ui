@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { EnquiryWizardComponent } from './enquiry-wizard/enquiry-wizard.component';
 import { EnquiryMainComponent } from './enquiry-main/enquiry-main.component';
 
+
 const routes: Routes = [
   {
     path: '',

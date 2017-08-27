@@ -6,5 +6,5 @@ export class PackageOption{
     package_option_cost :number;
     package_option_image:string;
     selection_allowed:number;
-    inner_items:OptionPrimary[];
+    optionPrimaries:OptionPrimary[];
 }

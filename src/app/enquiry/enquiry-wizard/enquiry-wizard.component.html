@@ -14,21 +14,23 @@
                             
                             <h3>Enquiry</h3>
 
-                            <!--<p-dataGrid [value]="cars" [paginator]="true" [rows]="20">
+                            <p-dataGrid [value]="items" [paginator]="true" [rows]="3">
                                 <p-header>
                                     Select a Category to Begin
                                 </p-header>
-                                <ng-template let-car pTemplate="item">
-                                    <div style="padding:3px" class="ui-g-12 ui-md-3">
-                                        <p-panel [header]="car.vin" [style]="{'text-align':'center'}">
-                                            <img src="assets/showcase/images/demo/car/{{car.brand}}.png" width="60">
-                                            <div class="car-detail">{{car.year}} - {{car.color}}</div>
-                                            <hr class="ui-widget-content" style="border-top:0">
-                                            <i class="fa fa-search" (click)="selectCar(car)" style="cursor:pointer"></i>
+                                <ng-template let-item pTemplate="item">
+                                    <div style="padding:5px" class="ui-g-12 ui-md-3">
+                                        <p-panel>
+                                            <img src="{{item.enq_group_image}}" width="60">                                              
+                                            <a (click)="selectEnquiryGroup(item)">
+                                                <span>
+                                                    {{item.enq_group_name}}
+                                                </span>
+                                            </a>                                         
                                         </p-panel>
                                     </div>
                                 </ng-template>
-                            </p-dataGrid>-->
+                            </p-dataGrid>
                             
                             <div class="row">
                                 <div class="col-md-3">
@@ -41,6 +43,6 @@
                     
                 </div>
             </div>
-        </div>
+        </div>        
     </div>
 </div>
