@@ -59,3 +59,31 @@
 .b-b {
     border-bottom: 1px solid #ccc;
 }
+
+.ui-datalist-data {
+    padding: 10px !important;
+    width: 100% !important;
+}
+
+.ui-datalist-data li {
+    color: #666;
+    border-bottom: 1px solid #ddd;
+    padding: 2px;
+}
+
+.ui-datalist-data li:hover {
+    color: #687d68;
+    cursor: pointer;
+    background: #ddd;
+    border-radius: 5px;
+}
+
+.small-text {
+    font-size: 12px;
+    vertical-align: bottom;
+    font-weight: 600;
+}
+.price {
+    color: #999;
+    font-size:14px;
+}

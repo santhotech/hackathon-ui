@@ -16,7 +16,7 @@
       "mobile": false,
       "styles": [
         "scss/style.scss",
-        "../node_modules/primeng/resources/themes/bootstrap/theme.css",
+        "../node_modules/primeng/resources/themes/flick/theme.css",
         "../node_modules/primeng/resources/primeng.min.css",
         "../node_modules/dragula/dist/dragula.css"
       ],
