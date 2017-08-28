@@ -12,6 +12,7 @@ import {PanelModule} from 'primeng/primeng';
 import { EnquiryWizardComponent } from './enquiry-wizard/enquiry-wizard.component';
 import { EnquiryMainComponent } from './enquiry-main/enquiry-main.component';
 import { EnquiryRoutingModule } from './enquiry-routing.module';
+import { EnquiryContactComponent } from './enquiry-contact/enquiry-contact.component'
 
 @NgModule({
   imports: [ EnquiryRoutingModule,
@@ -25,7 +26,8 @@ import { EnquiryRoutingModule } from './enquiry-routing.module';
  ],
   declarations: [
     EnquiryWizardComponent,
-    EnquiryMainComponent
+    EnquiryMainComponent,
+    EnquiryContactComponent
   ]
 })
 export class EnquiryModule { }

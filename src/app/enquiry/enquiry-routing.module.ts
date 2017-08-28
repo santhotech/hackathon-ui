@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { EnquiryWizardComponent } from './enquiry-wizard/enquiry-wizard.component';
 import { EnquiryMainComponent } from './enquiry-main/enquiry-main.component';
-
+import { EnquiryContactComponent } from './enquiry-contact/enquiry-contact.component'
 
 const routes: Routes = [
   {
@@ -25,7 +25,14 @@ const routes: Routes = [
         data: {
           title: 'Enquiry Main'
         }
-      }
+      },
+      {
+        path: 'enquiry-contact/:id',
+        component: EnquiryContactComponent,
+        data: {
+          title: 'Enquiry Contact'
+        }
+      },
     ]
   }
 ];

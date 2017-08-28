@@ -52,6 +52,9 @@ constructor( private router: Router,private enquiryService : EnquiryService) { }
   errors: any;
   showError: boolean = false;
 
+private min_amount: number = 0;
+private max_amount: number = 0;
+
 selectedPackageOption: string;
 selectedPackageGroup: String;
 handlePackage(obj) {
@@ -74,8 +77,14 @@ sendGuestData(){
   })
 }
 
+finish() {
+  this.router.navigateByUrl('enquiry/enquiry-contact/'+this.guestObj.id);
+}
+
 addItem(event,obj){   
     if(event.target.checked==true){
+        this.min_amount = (this.min_amount + (obj.cost)*1)-3;
+        this.max_amount = (this.max_amount + (obj.cost)*1)+3;
         let itemObj:any ={};
          itemObj.guest=this.guestObj.id;
         itemObj.primary_option= obj.id;

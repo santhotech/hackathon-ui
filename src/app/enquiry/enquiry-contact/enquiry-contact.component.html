@@ -1,0 +1,63 @@
+<div class="app flex-row align-items-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="text-align: center">
+                <img src="assets/img/logosb.png" style="max-height:150px" />
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            
+            <div class="col-md-12">
+                <div class="card-group mb-0">
+                    <div class="card p-2">
+                        <div class="card-block">
+                            <div *ngIf="showForm">
+                            <h3>Tell us a little bit about yourself!</h3>
+                            
+                            <form name="contactForm">
+                                <div class="input-group mb-1">
+                                <span class="input-group-addon"><i class="icon-user"></i>
+                                </span>
+                                    <input type="text" name="email" [(ngModel)]="contact.guest_contact_email" required  class="form-control" placeholder="Email">
+                                </div>
+
+                                <div class="input-group mb-1">
+                                <span class="input-group-addon"><i class="icon-user"></i>
+                                </span>
+                                    <input type="text" name="email" required  [(ngModel)]="contact.guest_first_name" class="form-control" placeholder="First Name">
+                                </div>
+
+                                <div class="input-group mb-1">
+                                <span class="input-group-addon"><i class="icon-user"></i>
+                                </span>
+                                    <input type="text" name="email" required  [(ngModel)]="contact.guest_last_name" class="form-control" placeholder="Last Name">
+                                </div>
+
+                                <div class="input-group mb-1">
+                                <span class="input-group-addon"><i class="icon-user"></i>
+                                </span>
+                                    <input type="text" name="email" required  [(ngModel)]="contact.guest_contact_phone" class="form-control" placeholder="Phone">
+                                </div>
+
+                                <input type="button" (click)="finish()" value="Done" class="btn btn-primary" />
+                            </form>
+                            </div>
+                            <div *ngIf="!showForm">
+                                                            <h3>Thank you! We will get back to you soon with your customized proposal.</h3>
+
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-3">
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>     
+    </div>
+</div>

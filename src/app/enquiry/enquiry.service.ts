@@ -25,8 +25,14 @@ export class EnquiryService {
         if(this.guestId==0) {
             return this.http.post(environment.api_url+"guest/",guestObj).map(this.extractDataGuest).catch(this.handleError);
         } else {
-            return this.http.put(environment.api_url+"guest/",guestObj).map(this.extractDataGuest).catch(this.handleError);
+            return this.http.put(environment.api_url+"guest/"+this.guestId+"/",guestObj).map(this.extractDataGuest).catch(this.handleError);
         }
+    }
+
+    updateGuestdata(guestObj,id):Observable<Guest>{
+        
+            return this.http.put(environment.api_url+"guest/"+id+"/",guestObj).map(this.extractDataGuest).catch(this.handleError);
+        
     }
 
     addItems(itemObj):Observable<any>{
@@ -35,6 +41,7 @@ export class EnquiryService {
 
     extractDataGuest(res: Response) {
         let body = res.json();
+        console.log("body: "+body.id);
         this.guestId = body.id;
         return body || {};
     }

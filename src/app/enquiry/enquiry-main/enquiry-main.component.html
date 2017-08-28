@@ -11,7 +11,7 @@
                         </div>
                         <div class="col-md-3">
                             <span class="pull-right small-text">
-                                Current Price/Person: <span class="price">20$ - 30$</span>
+                                Current Price/Person: <span class="price">{{min_amount | currency:'USD':true}} - {{max_amount | currency:'USD':true}}</span>
                             </span>
                         </div>
                     </div>
@@ -70,8 +70,16 @@
                                         </ng-template>
                                     </p-dataGrid>
                                 </div>
+                                
                             </div>
+                            
                         </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+<div class="col-md-12" style="text-align: center">
+                                    <input type="button" (click)="finish()" class="btn btn-primary" value="Finish" />
+                                </div>
                     </div>
                     
                 </div>
